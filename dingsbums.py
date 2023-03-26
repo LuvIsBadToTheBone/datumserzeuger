@@ -1,5 +1,5 @@
 #erzeugt datumsangaben für einen monat im format "Tag, dd.mm.yy"
-#usage: python3 dingsbums.py > datum.txt
+#usage: python3 dingsbums.py
 
 wochentage = ("Mo","Di","Mi","Do","Fr","Sa","So")
 
