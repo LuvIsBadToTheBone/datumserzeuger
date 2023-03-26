@@ -57,4 +57,4 @@ for i in range(1,gesamttage+1):
 		wochentagscounter = 0
 	wochentagscounter = wochentagscounter + 1
 file.close()
-print("In datumsdingens.txt gespeichert.)
+print("In datumsdingens.txt gespeichert.")
