@@ -4,7 +4,8 @@
 wochentage = ("Mo","Di","Mi","Do","Fr","Sa","So")
 
 
-print("Erzeugt Datumsangaben fuer einen ganzen Monat in Form: Tag, dd,mm,yy.\n\n")
+print("Erzeugt Datumsangaben fuer einen ganzen Monat in Form: Tag, dd,mm,yy, und speichert it Textdatei.\n\n")
+
 
 jahr = int(input("Bitte Gib die letzten beiden Zahlen des Jahres ein:  "))
 while jahr < 0 or jahr > 99:
@@ -46,8 +47,13 @@ while starttagint < 1 or starttagint > 7:
 
 wochentagscounter = starttagint
 
+
+
+file = open("datumsdingend.txt","w")
+
 for i in range(1,gesamttage+1):
-	print(f"{wochentage[wochentagscounter-1]}, {i}.{monat}.{jahr}")
+	file.write(f"{wochentage[wochentagscounter-1]}, {i}.{monat}.{jahr}\n")
 	if wochentagscounter == 7:
 		wochentagscounter = 0
 	wochentagscounter = wochentagscounter + 1
+file.close()
