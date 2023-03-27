@@ -52,9 +52,19 @@ wochentagscounter = starttagint
 file = open("datumsdingens.txt","w")
 
 for i in range(1,gesamttage+1):
-	file.write(f"{wochentage[wochentagscounter-1]}, {i}.{monat}.{jahr}\n")
+	nulltag = i
+	if nulltag < 10:
+		nulltag = "0" + str(i)
+	nullmonat = monat
+	if monat < 10:
+		nullmonat = "0" + str(monat)
+	nulljahr = jahr
+	if jahr < 10:
+		nulljahr = "0" + str(jahr)
+	file.write(f"{wochentage[wochentagscounter-1]},{nulltag}.{nullmonat}.{nulljahr}\n")
 	if wochentagscounter == 7:
 		wochentagscounter = 0
 	wochentagscounter = wochentagscounter + 1
 file.close()
+
 print("In datumsdingens.txt gespeichert.")
