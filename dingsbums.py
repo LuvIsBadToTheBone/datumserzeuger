@@ -1,5 +1,5 @@
 #erzeugt datumsangaben für einen monat im format "Tag, dd.mm.yy"
-#usage: python3 dingsbums.py
+#usage in terminal: python3 dingsbums.py
 
 wochentage = ("Mo","Di","Mi","Do","Fr","Sa","So")
 
@@ -47,9 +47,10 @@ while starttagint < 1 or starttagint > 7:
 
 wochentagscounter = starttagint
 
+#creating outputname regarding input named isseschonsoweit
+issesschonsoweit = str(monat) + "_" + str(jahr)
 
-
-file = open("datumsdingens.txt","w")
+file = open("%s.txt" % issesschonsoweit,"w")
 
 for i in range(1,gesamttage+1):
 	nulltag = i
@@ -67,4 +68,5 @@ for i in range(1,gesamttage+1):
 	wochentagscounter = wochentagscounter + 1
 file.close()
 
-print("In datumsdingens.txt gespeichert.")
+print("In ", issesschonsoweit, ". txt gespeichert.")
+
